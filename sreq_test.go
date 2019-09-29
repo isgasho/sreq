@@ -169,7 +169,7 @@ func TestCookies(t *testing.T) {
 	}
 }
 
-// TODO: This test case usually goes wrong if runs "go test -v ." for a batch of tests.
+// TODO: This test case usually goes wrong while running "go test -v ." for a batch of tests.
 //  It may work with "go test -v -p=1 .", need to find out the reason.
 // func TestFiles(t *testing.T) {
 // 	var data struct {

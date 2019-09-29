@@ -841,12 +841,13 @@ func (r *Response) Text() (string, error) {
 
 // JSON decodes the HTTP response body of r and unmarshals its JSON-encoded data into v.
 func (r *Response) JSON(v interface{}) error {
-	b, err := r.Raw()
-	if err != nil {
-		return err
-	}
-
-	return json.Unmarshal(b, v)
+	// b, err := r.Raw()
+	// if err != nil {
+	// 	return err
+	// }
+	//
+	// return json.Unmarshal(b, v)
+	return json.NewDecoder(r.R.Body).Decode(v)
 }
 
 // EnsureStatusOk ensures the HTTP response's status code of r must be 200.
